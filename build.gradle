@@ -31,6 +31,11 @@ jar {
 				'Main-Class': 'com.unicamp.tessera.TesseraApplication'
 		)
 	}
+	from {
+		(configurations.runtime).collect {
+			it.isDirectory() ? it : zipTree(it)
+		}
+	}
 }
 
 tasks.withType(org.gradle.jvm.tasks.Jar) {
