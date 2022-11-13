@@ -32,7 +32,7 @@ jar {
 		)
 	}
 	from {
-		(configurations.runtime).collect {
+		(configurations.compile).collect {
 			it.isDirectory() ? it : zipTree(it)
 		}
 	}
