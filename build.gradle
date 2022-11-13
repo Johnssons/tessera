@@ -24,3 +24,7 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+tasks.withType(org.gradle.jvm.tasks.Jar) {
+		duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
